@@ -96,5 +96,56 @@ body{
     background-color: orange; /* Cambia el color de fondo al pasar el mouse a naranja */
     box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow; /* Efecto de resplandor amarillo */
   }
-  
+
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  text-align: center;
+}
+
+.description {
+  padding: 10px;
+  font-size: 1.2rem; /* tamaño relativo */
+}
+
+/* Para la palabra BRYITH SAYUMI */
+.greetings {
+  display: flex;
+  flex-wrap: wrap; /* que las letras bajen si no entran */
+  justify-content: center;
+  gap: 5px;
+  font-size: 2rem; /* tamaño relativo */
+  color: #e91e63;
+}
+
+/* Botón */
+.button button {
+  background-color: #e91e63;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+.button a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+  .description {
+    font-size: 1rem;
+  }
+  .greetings {
+    font-size: 1.5rem; /* letras más pequeñas en móvil */
+    gap: 2px;
+  }
+  .button button {
+    width: 80%; /* botón más ancho en móvil */
+  }
+}
+
   
