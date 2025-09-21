@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
 
-/* ===== Reset y cuerpo ===== */
-body{
+/* ===== Fuente global ===== */
+* {
+  font-family: 'Poppins', cursive;
+  box-sizing: border-box;
+}
+
+/* ===== Cuerpo ===== */
+body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', cursive, Arial, sans-serif;
   color: azure;
   width: 100%;
   min-height: 100vh;
@@ -12,84 +17,87 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: black; /* fondo negro */
+  background-color: black;
   text-align: center;
 }
 
-/* ===== Mensaje arriba ===== */
+/* ===== Texto arriba ===== */
 .description {
   color: #fbff00;
-  padding: 10px;
   font-size: 1.5rem;
   margin-bottom: 20px;
+  padding: 0 10px; /* para que no pegue al borde en móvil */
 }
 
-/* ===== Texto grande animado ===== */
-.greetings{
-  display: flex;
-  flex-wrap: wrap; /* que las letras bajen si no entran */
-  justify-content: center;
-  gap: 5px;
-  font-size: 6rem; /* tamaño grande en desktop */
+/* ===== Letras animadas ===== */
+.greetings {
+  font-size: 6rem;
   font-weight: 900;
 }
 
-.greetings > span{
+.greetings > span {
   animation: glow 2.5s ease-in-out infinite;
 }
 
-@keyframes glow{
-  0%, 100%{
-      color: #fff;
-      text-shadow: 0 0 12px #fbff00, 0 0 50px #fbff00, 0 0 100px #fbff00;
+@keyframes glow {
+  0%, 100% {
+    color: #fff;
+    text-shadow: 0 0 12px #fbff00, 0 0 50px #fbff00, 0 0 100px #fbff00;
   }
-  10%, 90%{
-      color: #696565;
-      text-shadow: none;
+  10%, 90% {
+    color: #696565;
+    text-shadow: none;
   }
 }
 
-/* Retrasos para cada letra (puedes añadir más si quieres) */
-.greetings > span:nth-child(2){ animation-delay: .2s; }
-.greetings > span:nth-child(3){ animation-delay: .4s; }
-.greetings > span:nth-child(4){ animation-delay: .6s; }
-.greetings > span:nth-child(5){ animation-delay: .8s; }
+/* Retrasos */
+.greetings > span:nth-child(2) { animation-delay: .2s; }
+.greetings > span:nth-child(3) { animation-delay: .4s; }
+.greetings > span:nth-child(4) { animation-delay: .6s; }
+.greetings > span:nth-child(5) { animation-delay: .8s; }
 
 /* ===== Botón ===== */
 .button button {
-  background-color: orange; /* Fondo naranja */
+  background-color: yellow; /* Fondo amarillo */
   border: none; /* Sin bordes */
-  padding: 10px 20px; /* Relleno */
+  padding: 10px 20px; /* Ajusta el relleno */
   font-size: 18px; /* Tamaño de fuente */
   cursor: pointer;
   position: relative;
   border-radius: 20px; /* Esquinas redondeadas */
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.button button a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Hereda el color del texto del botón */
 }
 
 .button button:hover {
-  background-color: #ff9900; /* Naranja más oscuro al pasar el mouse */
-  box-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange; /* Resplandor naranja */
+  background-color: orange; /* Cambia a naranja al pasar el mouse */
+  box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow; /* Resplandor */
 }
 
-.button a {
-  text-decoration: none;
-  color: #fff; /* Texto blanco */
-  font-size: 1rem;
-}
+/* ===== Ajustes responsivos ===== */
+@media screen and (max-width: 574px) {
+  .greetings {
+    display: block;        /* las letras bajan */
+    font-size: 3rem;       /* letras más pequeñas */
+    font-weight: 500;
+    text-align: center;
+  }
 
-/* ===== Ajustes para pantallas pequeñas ===== */
-@media (max-width: 600px) {
   .description {
     font-size: 1rem;
   }
-  .greetings {
-    font-size: 3rem; /* letras más pequeñas en móvil */
-    gap: 2px;
-  }
+
   .button button {
-    width: 80%; /* botón más ancho en móvil */
+    width: 80%;            /* botón más ancho en móvil */
+    font-size: 1rem;       /* tamaño de texto más pequeño */
+  }
+
+  .button button a {
     font-size: 1rem;
   }
 }
-
